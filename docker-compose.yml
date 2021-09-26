@@ -1,0 +1,10 @@
+version: "3"
+services:
+  nginx:
+    image: nginx
+    build: ./nginx
+    container_name: nginx_website
+    volumes:
+      - /data:/data
+      - /data/docker-compose/nginx/conf.d:/etc/nginx/conf.d
+    restart: always
