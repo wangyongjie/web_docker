@@ -8,6 +8,11 @@ services:
       - /deploy:/deploy
       - /deploy/docker-compose/nginx/conf.d:/etc/nginx/conf.d
     restart: always
+    ports:
+      - "80:80"
+    networks:
+      proxy:
+        ipv4_address: 172.16.0.1
   web:
     image: web
     build: ./web
@@ -17,3 +22,8 @@ services:
       - /deploy/docker-compose/web/node_server:/node_server
     ports:
       - "20000:20000"
+networks:
+  proxy:
+    ipam:
+      config:
+      - subnet: 172.16.0.0/24
