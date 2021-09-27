@@ -6,24 +6,24 @@ services:
     container_name: nginx_website
     volumes:
       - /deploy:/deploy
-      - /deploy/docker-compose/nginx/conf.d:/etc/nginx/conf.d
+      - /deploy/web_docker/nginx/conf.d:/etc/nginx/conf.d
     restart: always
     ports:
       - "80:80"
     networks:
       proxy:
-        ipv4_address: 172.16.0.1
+        ipv4_address: 172.21.0.1
   web:
     image: web
     build: ./web
     container_name: web_server
     restart: always
     volumes:
-      - /deploy/docker-compose/web/node_server:/node_server
+      - /deploy/web_docker/web/node_server:/node_server
     ports:
       - "20000:20000"
 networks:
   proxy:
     ipam:
       config:
-      - subnet: 172.16.0.0/24
+      - subnet: 172.21.0.0/24
