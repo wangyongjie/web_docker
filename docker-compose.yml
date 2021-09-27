@@ -8,3 +8,12 @@ services:
       - /deploy:/deploy
       - /deploy/docker-compose/nginx/conf.d:/etc/nginx/conf.d
     restart: always
+  web:
+    image: web
+    build: ./web
+    container_name: web_server
+    restart: always
+    volumes:
+      - /deploy:/deploy
+    ports:
+      - "7001:7001" # web_server
