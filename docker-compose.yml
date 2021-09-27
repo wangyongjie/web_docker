@@ -5,6 +5,6 @@ services:
     build: ./nginx
     container_name: nginx_website
     volumes:
-      - /data:/data
-      - /data/docker-compose/nginx/conf.d:/etc/nginx/conf.d
+      - /deploy:/deploy
+      - /deploy/docker-compose/nginx/conf.d:/etc/nginx/conf.d
     restart: always

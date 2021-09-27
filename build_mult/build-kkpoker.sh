@@ -1,1 +1,0 @@
-npm install && npm run build-pre && rm -rf ../dist_docker && cp -r ../dist ../dist_docker
