@@ -14,6 +14,6 @@ services:
     container_name: web_server
     restart: always
     volumes:
-      - /deploy:/deploy
+      - /deploy/docker-compose/web/node_server:/node_server
     ports:
-      - "7001:7001" # web_server
+      - "20000:20000"
