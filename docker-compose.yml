@@ -3,7 +3,7 @@ services:
   nginx:
     image: nginx
     build: ./nginx
-    container_name: nginx_website
+    container_name: nginx_docker
     volumes:
       - /deploy:/deploy
       - /deploy/web_docker/nginx/conf.d:/etc/nginx/conf.d
@@ -16,7 +16,7 @@ services:
   web:
     image: web
     build: ./web
-    container_name: web_server
+    container_name: web_server_docker
     restart: always
     volumes:
       - /deploy/web_docker/web/node_server:/node_server
