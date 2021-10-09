@@ -1,13 +1,13 @@
 #!/bin/bash
 
-project = 'all'
-branch = 'master'
+project="all"
+branch="master"
 
 if [$1 != '']; then
-    $project = $1
+    $project=$1
 fi
 if [$2 != '']; then
-    $branch = $2
+    $branch=$2
 fi
 
 if [$project == 'admin_frontend_pg' || $project == 'all' ]; then
