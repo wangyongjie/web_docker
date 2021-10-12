@@ -33,7 +33,7 @@ module.exports = appInfo => {
 
   config.logrotator = {
     filesRotateBySize: [
-      path.join('/PPPoker/node_server/log', 'node_server-web.log'),
+      path.join('/deploy/node_server/log', 'node_server-web.log'),
     ],
     maxFileSize: 10 * 1024 * 1024,
   };

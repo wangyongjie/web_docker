@@ -1,5 +1,5 @@
 'use strict';
 
 exports.logger = {
-  dir: '/PPPoker/node_server/log',
+  dir: '/deploy/node_server/log',
 };

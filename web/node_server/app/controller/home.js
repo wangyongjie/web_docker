@@ -12,17 +12,17 @@ class HomeController extends Controller {
 
     if (projectCommand[project]) {
       if (projectCommand[project].length === 1) {
-        return `cd /PPPoker/${project} && git checkout . && git fetch --all && cd ${projectCommand[project][0]} && bash ./build.sh`;
+        return `cd /deploy/${project} && git checkout . && git fetch --all && cd ${projectCommand[project][0]} && bash ./build.sh`;
       } else if (projectCommand[project].length > 1) {
         // 暂时限制配两层
-        return `cd /PPPoker/${project} && git checkout . && git git fetch --all && cd ${projectCommand[project][0]} && bash ./build.sh && cd ../${projectCommand[project][1]} && bash ./build.sh`;
+        return `cd /deploy/${project} && git checkout . && git git fetch --all && cd ${projectCommand[project][0]} && bash ./build.sh && cd ../${projectCommand[project][1]} && bash ./build.sh`;
       }
-      return `cd /PPPoker/${project} && git checkout . && git git fetch --all && bash ./build.sh`;
+      return `cd /deploy/${project} && git checkout . && git git fetch --all && bash ./build.sh`;
 
     }
 
-    // 不配置，默认为pc和mobile
-    return `cd /PPPoker/${project} && git checkout . && git pull && cd pc && bash ./build.sh && cd ../mobile && bash ./build.sh`;
+    // 不配置，默认为一层
+    return `cd /deploy/${project} && git checkout . && git pull && bash ./build.sh`;
   }
 
   async index() {
@@ -70,7 +70,7 @@ class HomeController extends Controller {
     const tag = ctx.params.tag;
     const fs = require('fs');
     const readline = require('readline');
-    const fileStream = fs.createReadStream('/PPPoker/node_server/log/node_server-web.log');
+    const fileStream = fs.createReadStream('/deploy/node_server/log/node_server-web.log');
     const rl = readline.createInterface({
       input: fileStream,
       crlfDelay: Infinity,
