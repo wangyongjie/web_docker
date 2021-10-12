@@ -8,12 +8,12 @@ services:
       - /deploy:/deploy
       - /deploy/web_docker/nginx/conf.d:/etc/nginx/conf.d
     restart: always
-  web:
-    image: web
-    build: ./web
-    container_name: web_server_docker
-    restart: always
-    volumes:
-      - /deploy/web_docker/web/node_server:/node_server
-    ports:
-      - "20000:20000"
+  # web:
+  #   image: web
+  #   build: ./web
+  #   container_name: web_server_docker
+  #   restart: always
+  #   volumes:
+  #     - /deploy/web_docker/web/node_server:/node_server
+  #   ports:
+  #     - "20000:20000"
