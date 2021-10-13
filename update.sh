@@ -10,15 +10,15 @@ if [ "$2" != '' ]; then
     branch=$2
 fi
 
-if [ "$project" == 'admin_frontend_pg' ] || [ "$project" == 'all' ]; then
-    echo '-------start update admin_frontend_pg-------'
+if [ "$project" == 'vue-admin-template' ] || [ "$project" == 'all' ]; then
+    echo '-------start update vue-admin-template-------'
     cd ../
-    if [ ! -d './admin_frontend_pg' ]; then
-        git clone -b $branch http://120.77.236.161/git/PgAdmin/admin_frontend_pg.git
+    if [ ! -d './vue-admin-template' ]; then
+        git clone -b $branch https://github.com/PanJiaChen/vue-admin-template.git
     fi
-    cp web_docker/build/docker-build.sh admin_frontend_pg/docker-build.sh
-    cp web_docker/build/build.sh admin_frontend_pg/build.sh
-    cd admin_frontend_pg
+    cp web_docker/build/docker-build.sh vue-admin-template/docker-build.sh
+    cp web_docker/build/build.sh vue-admin-template/build.sh
+    cd vue-admin-template
     sh ./docker-build.sh
-    echo '-------end update admin_frontend_pg-------'
+    echo '-------end update vue-admin-template-------'
 fi

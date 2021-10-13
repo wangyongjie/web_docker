@@ -8,6 +8,8 @@ services:
       - /deploy:/deploy
       - /deploy/web_docker/nginx/conf.d:/etc/nginx/conf.d
     restart: always
+  #   ports:
+  #     - "80:80"
   # web:
   #   image: web
   #   build: ./web
