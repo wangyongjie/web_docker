@@ -3,7 +3,6 @@ services:
   nginx:
     image: nginx:1.16.1
     container_name: nginx_docker
-    privileged: true
     volumes:
       - /deploy:/deploy
       - /deploy/web_docker/nginx/conf.d:/etc/nginx/conf.d
