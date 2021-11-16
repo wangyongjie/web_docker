@@ -1,8 +1,7 @@
 version: "3"
 services:
   nginx:
-    image: nginx
-    build: ./nginx
+    image: nginx:1.16.1
     container_name: nginx_docker
     privileged: true
     volumes:
